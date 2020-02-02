@@ -9,15 +9,51 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Women in Digital</title>
+    <script>
+function validateForm() {
+  var x = document.forms["pledgeForm"]["firstName"].value;
+  if (x == "") {
+    alert("First Name must be filled out");
+    return false;
+  }
+
+   var x = document.forms["pledgeForm"]["lastName"].value;
+  if (x == "") {
+    alert("Last Name must be filled out");
+    return false;
+  }
+
+   var x = document.forms["pledgeForm"]["email"].value;
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+
+   var x = document.forms["pledgeForm"]["amount"].value;
+  if (x == "") {
+    alert("You must enter an amount");
+    return false;
+  }
+}
+</script>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col">
-         Women in Digital
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">About</a>
+            <a class="nav-item nav-link" href="#">Contact</a>
         </div>
-        <div class="col">
-          2 of 2
+        </div>
+        </nav>
         </div>
       </div>
       <div class="row">
@@ -25,37 +61,22 @@
         <div class="col-4">
           <h1>Support Our Cause</h1>
           <p>With more than 130 million girls out of school today, she needs your help to reach the most vulnerable girls denied an education.</p>
-          <form action="submission_form.php" method="post">
+          <form name="pledgeForm" onsubmit="return validateForm()"
+          action="submission_form.php" method="post">
             <div class="form-row">
               <div class="col">
                 <input type="text" name="firstName" class="form-control" placeholder="First name">
               </div>
               <div class="col">
-                <input type="text" name="lastname" class="form-control" placeholder="Last name">
+                <input type="text" name="lastName" class="form-control" placeholder="Last name">
               </div>
             </div>
             <div class="form-row">
-              <input type="text" class="form-control" placeholder="Email">
+              <input type="text" name="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-row">
-              <div class="col">
-                <button data-dollars='25'>
-                $25
-                </button>
-              </div>
-              <div class="col">
-                <button data-dollars='25'>
-                $50
-                </button>
-              </div>
-              <div class="col">
-                <button data-dollars='25'>
-                $100
-                </button>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="button">$<input type="text" class="set-amount" placeholder=""> </input></div>
+              <div class="button"><input type="text" class="form-control"
+              name="amount" placeholder="$ Amount"> </input></div>
             </div>
             <div class="form-row">
               <input class="btn btn-primary" type="submit" value="Submit">
