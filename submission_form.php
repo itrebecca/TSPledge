@@ -14,7 +14,7 @@
 <div class="container">
 Thank you <?php echo $_POST["firstName"]; ?> <?php echo $_POST["lastName"]; ?>
 <br>
-For your pledge of $<?php echo $_POST["amount"]; ?>
+For your pledge of $<?php echo $_POST["amount"]; ?> <?php echo $_POST["MyRadio"]; ?>
 </div>
 </body>
 </html>
